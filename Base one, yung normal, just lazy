@@ -1,0 +1,41 @@
+
+public class Main {
+
+    // Class variable
+    String player;
+
+    // Method
+    public void swimming() {
+        System.out.println(player + " is swimming!");
+    }
+
+    public void fighting() {
+        System.out.println(player + " is fighting!");
+    }
+
+    public static void main(String[] args) {
+
+        // Create an array for 3 players
+        Main[] players = new Main[3];
+
+        // Create 3 objects
+        for (int i = 0; i < 3; i++) {
+            players[i] = new Main();
+        }
+
+        // Assign player names
+        players[0].player = "Curddy";
+        players[1].player = "John";
+        players[2].player = "Alex";
+
+        // Make all players swim
+        for (int i = 0; i < 3; i++) {
+            players[i].swimming();
+        }
+
+        // Make all players fight
+        for (int i = 0; i < 3; i++) {
+            players[i].fighting();
+        }
+    }
+}
