@@ -1,0 +1,53 @@
+import java.util.*;
+
+public class Main {
+  String petName;
+  String petAge;
+  String petSpecies;
+  String petWhy;
+
+  public void bio(){
+    System.out.printf("%s is %s year-old %s%n", petName,  petAge, petSpecies);
+  }
+
+  public void why(){
+    System.out.printf("%s has %s", petName , petWhy);
+  }
+    public static void main(String[] args){
+      Scanner input = new Scanner(System.in);
+
+      System.out.println("Pets patients today:");
+      int number = input.nextInt();
+      input.nextLine();
+
+      Main[] pets = new Main[number];
+
+      for (int i = 0; i < number; i++){
+        pets[i] = new Main();
+
+        System.out.printf("%nPet %d: " , i + 1);
+        pets[i].petName = input.nextLine();
+
+        System.out.print("Age:");
+        pets[i].petAge = input.nextLine();
+
+        System.out.print("Species:");
+        pets[i].petSpecies = input.nextLine();
+
+        System.out.print("Why:");
+        pets[i].petWhy = input.nextLine();
+      }
+
+      System.out.println(" ");
+      System.out.println("--Pets bio--");
+
+      for (int i = 0; i < number; i++){
+        System.out.printf("Pet %d%n", i + 1);
+        pets[i].bio();
+        pets[i].why();
+        System.out.println(" ");
+        System.out.println(" ");
+
+      }
+    }
+}
